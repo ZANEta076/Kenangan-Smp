@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+    content="width=device-width, 
+    initial-scale=1.0">
+    <title>Belajar13</title>
+
+    <style>
+  /* Reset dan dasar */
+  * {
+    box-sizing: border-box;
+  }
+
+  .p1 {
+    text-align: center;
+    font-size: 25px;
+    background-color: #1100fc;
+    border-radius: 15px;
+  }
+
+  body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background-color: #fff;
+    color: #111;
+  }
+
+  /* Container utama */
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  /* Judul dan Navigasi */
+  h1 {
+    font-size: 1.5em;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  nav {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #0044cc;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+  /* Penekanan teks */
+  mark {
+    background-color: yellow;
+    font-weight: bold;
+  }
+
+  /* Paragraf utama */
+  p {
+    text-align: justify;
+    font-size: 1em;
+    margin-bottom: 15px;
+  }
+
+  /* Penutup nama */
+  .penutup {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 30px;
+    font-size: 1.1em;
+  }
+
+  /* Responsive tweak */
+  @media (max-width: 480px) {
+    body {
+      padding: 10px;
+    }
+
+    h1 {
+      font-size: 1.2em;
+    }
+
+    p {
+      font-size: 0.95em;
+    }
+
+    nav a {
+      display: inline-block;
+      margin: 5px;
+    }
+  }
+
+  
+
+  .center-text {
+  text-align: center !important;  /* supaya override text-align: justify */
+  margin-bottom: 15px;  /* optional, sesuai gaya paragraf lain */
+  color: #000000;       /* sesuai warna yang kamu inginkan */
+  font-size: 1.1em;     /* bisa disesuaikan */
+}
+
+.btn-scrol {
+  display: inline-block;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-scrol::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+}
+
+.btn-scrol:hover::before {
+  left: 125%;
+}
+
+.btn-scrol:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-scrl {
+  padding: 10px 14px;
+  background-color: skyblue;
+  border: 4px;
+  border: 2px solid black;
+  box-shadow: 3px 3px black;
+}
+
+.btn-scrl:hover {
+box-shadow: 0 0;
+transform: translate(3px, 3px);
+transition: all 200ms ease;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.table-h {
+  margin: auto;
+  border-collapse: separate;
+  width: 100%;
+}
+
+.table-h th {
+  background-color: #ff0000;
+  color: #ffffff;
+  padding: 15px;
+  border: 1px solid #ddd;
+}
+
+.table-h td {
+  background-color: #ffffff;
+  padding: 15px;
+  border: 1px solid #000000;
+  text-align: center;
+}
+
+.table-h th h2 {
+  margin: 0;
+}
+
+.table-h td a {
+  text-decoration: none;
+  color: none;
+}
+
+.table2 {
+  margin: auto;
+  border-collapse: separate;
+  width: 100%;
+}
+
+.table2 th {
+  background-color: #ff0000;
+  color: #ffffff;
+  padding: 15px;
+  border: 1px solid #ddd;
+}
+
+.table2 td {
+  background-color: #ffffff;
+  padding: 15px;
+  border: 1px solid #000000;
+  text-align: center;
+}
+
+.table2 th h2 {
+  margin: 0;
+}
+
+.table2 td a {
+  text-decoration: none;
+  color: none;
+}
+
+
+hr {
+  border: 2px dashed #00ff22;
+}
+
+hr {
+  border-radius: 15px;
+}
+
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body style="background-color: rgb(37, 45, 63);">
+ 
+<div class="p1">
+
+<h1  style="color: #ffffff;" > Halaman Utama </h1>
+
+</div>
+
+<div style="margin-bottom: 10px;"></div>
+
+<div>      
+       <table class="table-h">
+
+   <h3 id="Home" style="text-align: center;"></h3>
+
+          <tr>
+            
+            <th> <h2> Kolom 1 </h2> </th>
+            <th> <h2> Kolom 2 </h2> </th>
+            <th> <h2> Kolom 3 </h2> </th>
+           </tr>
+
+           <tr>
+
+            <td> <a href="#Pesan" onclick="playMusik('musik')">Baca Dan Hayati</a> </td>
+
+            <td> <a href="#Contacs" onclick="stopMusik()">Daftar Nama</a> </td>
+
+            <td> <a href="ghtml/halaman1.html">Galeri Pramuka Kls 9</a> </td>
+         </tr>
+       </table>
+</div>
+<br> <hr>
+<br>
+<div>
+  <table class="table2">
+       <tr>
+      <th><h2>Kolom 4</h2></th>
+      <th><h2>kolom 5</h2></th>
+      <th><h2>Kolom 6</h2></th>
+       </tr>
+       <tr>
+        <td><a href="gkls9/g1.html">Galery Kls 7</a></td>
+        <td><a href="gkls9/g2.html">Galery Kls 8</a></td>
+        <td><a href="gkls9/g3.html">Galery Kls 9</a></td>
+       </tr>
+  </table>
+</div>
+
+<div style="text-align: center;">
+  <p class="center-text" style="color: #ffffff;">Bantu Subscribe YouTube aku yh, Sebagai Kata terimakasih</p>
+</div>
+
+<div style="text-align: center;">
+
+
+  <button onclick="window.location.href='https://www.youtube.com/@MAVIASEPUDY';"
+          style="background-color: rgb(255, 255, 255); color: #ff0101; padding: 10px 50px;
+                 border: solid px #3cff01; border-radius: 30px; cursor: pointer;">
+
+    <i class="fa-brands fa-youtube" style="margin-right: 10px; color: #ff0000; font-size: 20px; vertical-align: middle;"></i>
+    Buka Ke Youtube
+  </button>
+</div>
+
+<div style="margin-bottom: 1000px;"></div>
+
+<h2 id="Pesan" style="background-color: #4c00ff; color: #ffffff; padding: 10px 15px; border-radius: 10px;"># Pesan </h2>
+<div style="text-align: center;color: #ffffff;">
+    
+              <h1>Baca Pelan-Pelan Saja :) </h1>
+              <h3> Teman-teman yang aku sayangi, </h3>
+
+    <p> Tak terasa, waktu telah membawa kita ke ujung perjalanan di SMP tercinta ini. <br> Rasanya baru kemarin kita melangkah masuk sebagai anak-anak baru—penuh rasa penasaran, canggung, dan harapan. <br> Tapi hari ini, kita berdiri di sini, dengan segudang kenangan, pelajaran, dan pengalaman yang tak akan pernah bisa tergantikan.</p>
+
+<p>Tiga tahun bukan waktu yang singkat.
+<br> Kita pernah <mark>tertawa bersama</mark>, belajar saling memahami, melewati ujian demi ujian,
+<br> bahkan pernah <mark>berselisih</mark> karena hal sepele, tapi kemudian saling memaafkan dan menguatkan.
+<br> Semua itu adalah bagian dari cerita indah yang akan selalu hidup dalam ingatan.
+</p>
+
+<p>
+
+ Kini, saatnya kita berpisah.
+<br> Mungkin kita tak akan lagi duduk di kelas yang sama,
+<br> tak lagi bercanda saat jam istirahat,
+<br> dan mungkin, kita tak akan <mark>satu sekolah lagi.</mark>
+<br> Tapi satu hal yang pasti—<mark>kenangan ini akan selalu hidup di hati.</mark>
+</p>
+
+<p>
+Ingatlah setiap langkah kecil yang pernah kita ambil di sini.
+<br> Setiap pelajaran, setiap tawa, setiap air mata.
+<br> Semuanya adalah bagian dari perjalanan kita tumbuh dan menjadi lebih kuat.
+</p>
+
+<P>
+
+Kita akan pergi, membawa harapan, mimpi, dan semangat baru.
+<br> Melangkah ke dunia yang lebih luas, ke tempat-tempat yang mungkin belum pernah kita bayangkan.
+<br> Tapi jangan lupa—<mark>di sinilah tempat kita memulai segalanya.</mark>
+
+</P>
+<P>
+Terima kasih untuk semua guru yang telah membimbing dengan tulus,
+<br> untuk sahabat yang selalu ada dalam suka dan duka,
+<br> dan untuk semua kenangan yang telah membuat hati kita kaya akan makna.
+<br> <mark>Terima kasih untuk tawa, pelajaran, dan persahabatan yang tak ternilai.</mark>
+</P>
+<P>
+Kini saatnya kita berkata:
+<br> <mark>Selamat jalan.</mark>
+<br> Selamat melangkah menuju masa depan yang menanti.
+<br> Jangan takut, jangan ragu. Dunia ini luas dan indah untuk dijelajahi.
+<br> <mark>Sampai jumpa di masa depan—di tempat yang mungkin berbeda,
+<br> tapi dengan hati yang tetap saling mengingat.</mark>
+</P>
+<p>
+Karena perpisahan ini bukan akhir,
+<br> melainkan awal dari perjalanan panjang yang lebih luar biasa.
+</p>
+</div>
+   
+<p style="text-align: center; color: #ffffff;">Salam hangat dan penuh harapan,</p>
+
+<h2  style="text-align: center; color: #ffffff;"> [ Alex ]</h2>
+
+<p style="text-align: center; color: #ffffff;">Klik salah satu di bawah ini :) </p>
+
+
+
+
+
+<div>
+ 
+ <h2 style="text-align: center;">
+
+        <a href="#Contacs" onclick="stopMusik()" class="btn-scrol"> Daftar Nama</a>
+
+
+        <a href="#Home" onclick="stopMusik()" class="btn-scrol">Home </a>
+       
+ </h2>
+
+</div>
+
+
+
+
+
+        
+<div style="margin-bottom: 1000px;">
+</div>
+
+<div style="color: #ffffff;">
+    
+      
+<h2 id="Contacs" align="center">| # Daftar Nama Kelas 9 2025 | </h2>
+
+<h2 align="center">Daftar Siswa Kelas 9A</h2>
+
+<table align="center" border="1" cellpadding="5" cellspacing="0" width="350">
+  <thead>
+    <tr>
+      <th width="50">No</th>
+      <th width="350">Nama Siswa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Ach Hibbul Nizra Ar-Rahman</td></tr>
+    <tr><td>2</td><td>Ach Reyhan</td></tr>
+    <tr><td>3</td><td>Agis Ali Fatahillah</td></tr>
+    <tr><td>4</td><td>Alex Irawan</td></tr>
+    <tr><td>5</td><td>Defa Ramadani</td></tr>
+    <tr><td>6</td><td>Erfandi</td></tr>
+    <tr><td>7</td><td>Fitri Aulia</td></tr>
+    <tr><td>8</td><td>Irliyanto</td></tr>
+    <tr><td>9</td><td>Joko Lanang Ramadani</td></tr>
+    <tr><td>10</td><td>Kamilatul Fitriah</td></tr>
+    <tr><td>11</td><td>Khofifah</td></tr>
+    <tr><td>12</td><td>Rofiqo Syakdah</td></tr>
+  </tbody>
+</table>
+
+
+<h2 align="center">Daftar Siswa Kelas 9B</h2>
+
+<table border="1" cellpadding="5" cellspacing="0" width="350"  align="center">
+  <thead>
+    <tr>
+      <th width="50">No</th>
+      <th width="350">Nama Siswa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>Ach Kurniawan</td></tr>
+    <tr><td>2</td><td>Airin Nanda Pratama</td></tr>
+    <tr><td>3</td><td>Althofunnisya'</td></tr>
+    <tr><td>4</td><td>Anwari</td></tr>
+    <tr><td>5</td><td>Ach Faizal</td></tr>
+    <tr><td>6</td><td>Chelsea Wardania</td></tr>
+    <tr><td>7</td><td>Rifatun Nasyila</td></tr>
+    <tr><td>8</td><td>Rizal Amin Mustofa</td></tr>
+    <tr><td>9</td><td>Rohnatun</td></tr>
+    <tr><td>10</td><td>Sadewa beksi</td></tr>
+  </tbody>
+</table>
+
+
+<br>
+
+ <h2 style="text-align: center;">  <a href="#Pesan" onclick="playMusik('musik')" class="btn-scrl" style="color: #ffffff;"> Pesan </a>
+      |
+       <a href="#Home" onclick="stopMusik()" class="btn-scrl" style="color: #ffffff;"> Home </a> 
+      |
+    </h2>
+
+
+</div>
+    
+
+    <audio id="musik" src="lagu.mp3"></audio>
+    
+
+
+<script>
+  const audio = document.getElementById("musik");
+
+  function playMusik() {
+    audio.pause();
+    audio.currentTime = 0;
+    audio.play();
+  }
+
+  function stopMusik() {
+    audio.pause();
+    audio.currentTime = 0;
+  }
+
+  window.addEventListener("beforeunload", stopMusik);
+</script>
+</body>
+
+</html>
